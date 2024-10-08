@@ -22,7 +22,7 @@ export default function HomePage() {
     <Section>
       <Container>
         <Title size="1" textAlign="center">
-          Home Page
+          Home Page test
         </Title>
       </Container>
     </Section>
