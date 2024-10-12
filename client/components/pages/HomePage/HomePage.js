@@ -103,6 +103,9 @@ export default function HomePage() {
     }
   ]
 
+  // run in window for dev build, npm run build:dev script not working
+  // npx webpack --mode=development --config ./client/config/webpack.dev.config.js
+
   return (
     <Section>
       <Container>
