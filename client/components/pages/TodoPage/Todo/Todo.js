@@ -31,6 +31,7 @@ export default function Todo({
   const dispatch = useDispatch();
 
   const [currentText, setCurrentText] = useState(text);
+  const [description, setDescription] = useState("cmd");
   const [edit, setEdit] = useState(false);
   const [confirm, setConfirm] = useState(false);
   const [updatedMessage, setUpdatedMessage] = useState('');
@@ -87,14 +88,25 @@ export default function Todo({
               </small>
             </p>
             {edit ? (
+              <>
               <Textarea
                 value={currentText}
                 onChange={updateText}
               />
+              <Textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              </>
             ) : (
+              <>
               <p>
                 {text}
               </p>
+              <p>
+                {description}
+              </p>
+              </>
             )}
           </Content>
 

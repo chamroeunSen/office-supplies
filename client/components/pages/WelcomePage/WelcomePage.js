@@ -22,7 +22,7 @@ export default function WelcomePage() {
     <Section>
       <Container>
         <Title size="1" textAlign="center">
-          Welcome Page!
+          Please login to check your task
         </Title>
       </Container>
     </Section>
