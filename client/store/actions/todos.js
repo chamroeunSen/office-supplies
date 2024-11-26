@@ -12,12 +12,13 @@ export const setTodos = todos => ({
   },
 });
 
-export const addTodo = ({ id, text, createdAt }) => ({
+export const addTodo = ({ id, text, description, createdAt }) => ({
   type: ADD_TODO,
   payload: {
     createdAt,
     id,
     text,
+    description,
   },
 });
 

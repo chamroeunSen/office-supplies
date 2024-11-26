@@ -12,9 +12,10 @@ export const attemptGetTodos = () => dispatch =>
     })
     .catch(dispatchError(dispatch));
 
-export const attemptAddTodo = text => dispatch =>
-  postTodo({ text })
+export const attemptAddTodo = (text, description) => dispatch =>
+  postTodo({ text, description })
     .then(({ todo, user }) => {
+      console.log("the todo post", todo)
       dispatch(addTodo(todo));
       return user;
     })

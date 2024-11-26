@@ -26,12 +26,14 @@ import { attemptDeleteTodo, attemptToggleCompleteTodo, attemptUpdateTodo } from 
 const fromNow = date => formatDistanceToNow(parseISO(date), { addSuffix: true });
 
 export default function Todo({
-  id, text, completed, createdAt, updatedAt,
+  id, text, description, completed, createdAt, updatedAt,
 }) {
   const dispatch = useDispatch();
 
+  // console.log("updating",id, text, description )
+
   const [currentText, setCurrentText] = useState(text);
-  const [description, setDescription] = useState("cmd");
+  const [currentDescription, setCurrentDescription] = useState(description);
   const [edit, setEdit] = useState(false);
   const [confirm, setConfirm] = useState(false);
   const [updatedMessage, setUpdatedMessage] = useState('');
@@ -94,8 +96,8 @@ export default function Todo({
                 onChange={updateText}
               />
               <Textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={currentDescription}
+                onChange={(e) => setCurrentDescription(e.target.value)}
               />
               </>
             ) : (
@@ -104,7 +106,7 @@ export default function Todo({
                 {text}
               </p>
               <p>
-                {description}
+                {currentDescription}
               </p>
               </>
             )}

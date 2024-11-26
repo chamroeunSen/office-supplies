@@ -3,7 +3,11 @@ import { push } from 'redux-first-history';
 
 import { logout } from '_store/actions/user';
 
-export const handleSuccess = resp => resp.body;
+// export const handleSuccess = resp => resp.body;
+export const handleSuccess = resp => {
+  console.log("the response", resp.body)
+  return resp.body
+};
 
 export const handleError = error => {
   if (error.response) {

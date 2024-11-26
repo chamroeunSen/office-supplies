@@ -14,6 +14,8 @@ export function todo(state = {
       return update(state, {
         id: { $set: action.payload.id },
         text: { $set: action.payload.text },
+        // set to do when get data from res
+        description: { $set: action.payload.description },
         createdAt: { $set: action.payload.createdAt },
       });
     case TOGGLE_COMPLETE_TODO:
