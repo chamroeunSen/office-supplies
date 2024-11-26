@@ -29,10 +29,11 @@ export const attemptToggleCompleteTodo = id => dispatch =>
     })
     .catch(dispatchError(dispatch));
 
-export const attemptUpdateTodo = (id, text) => dispatch =>
-  putTodo({ id, text })
+export const attemptUpdateTodo = (id, text, description) => dispatch =>
+  // param
+  putTodo({ id, text, description})
     .then(data => {
-      dispatch(updateTodo({ id, text, updatedAt: data.todo.updatedAt }));
+      dispatch(updateTodo({ id, text, description, updatedAt: data.todo.updatedAt }));
       return data;
     })
     .catch(dispatchError(dispatch));

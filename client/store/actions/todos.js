@@ -29,12 +29,13 @@ export const toggleCompleteTodo = id => ({
   },
 });
 
-export const updateTodo = ({ id, text, updatedAt }) => ({
+export const updateTodo = ({ id, text, description, updatedAt }) => ({
   type: UPDATE_TODO,
   payload: {
     updatedAt,
     id,
     text,
+    description,
   },
 });
 

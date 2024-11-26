@@ -25,6 +25,7 @@ export function todo(state = {
     case UPDATE_TODO:
       return update(state, {
         text: { $set: action.payload.text },
+        description: { $set: action.payload.description },
         updatedAt: { $set: action.payload.updatedAt },
       });
     default:

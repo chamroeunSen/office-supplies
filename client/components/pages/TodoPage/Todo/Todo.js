@@ -62,8 +62,8 @@ export default function Todo({
   };
 
   const handleUpdateTodo = () => {
-    if (currentText) {
-      dispatch(attemptUpdateTodo(id, currentText))
+    if (currentText && currentDescription) {
+      dispatch(attemptUpdateTodo(id, currentText, currentDescription))
         .then(() => setEdit(false));
     }
   };
